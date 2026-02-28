@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>שיפודי מושון - ראשונות ועיקריות</title>
+
+<style>
+:root{
+  --bg:#000;
+  --card:#1a1a1a;
+  --gold:#d4af37;
+  --muted:#cfcfcf;
+  --shadow:0 0 22px rgba(212,175,55,.18);
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  font-family:"Segoe UI",Arial,sans-serif;
+  background: radial-gradient(1200px 800px at 50% -20%, rgba(212,175,55,.10), transparent 55%), #000;
+  color:#fff;
+  padding:20px 14px 40px;
+}
+
+.container{
+  max-width:600px;
+  margin:auto;
+  position:relative;
+}
+
+/* חזור */
+.back{
+  position:absolute;
+  top:0;
+  left:0;
+  border:2px solid var(--gold);
+  background:#1f1f1f;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:10px;
+  font-weight:800;
+  cursor:pointer;
+}
+.back:hover{
+  box-shadow:0 0 12px rgba(212,175,55,.25);
+}
+
+/* לוגו */
+.logo{
+  display:block;
+  margin:50px auto 40px;
+  width:200px;
+  max-width:80%;
+}
+
+/* כותרות בסגנון index */
+.section-title{
+  display:inline-block;
+  border:2px solid var(--gold);
+  background:linear-gradient(180deg,#2a2a2a,#1f1f1f);
+  padding:10px 24px;
+  border-radius:14px;
+  font-size:22px;
+  font-weight:900;
+  box-shadow:var(--shadow);
+  margin:40px 0 20px;
+}
+
+/* פריט תפריט */
+.menu-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  border-bottom:1px dashed var(--gold);
+  padding:10px 0;
+  font-size:17px;
+}
+
+.price{
+  font-weight:bold;
+  white-space:nowrap;
+}
+
+/* שתי עמודות במסך רחב */
+@media(min-width:750px){
+  .columns{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<button class="back" onclick="history.back()">חזור</button>
+
+<img src="logo.png" class="logo" alt="שיפודי מושון">
+
+<div class="columns">
+
+<!-- צד ימין -->
+<div>
+
+<div class="section-title">ראשונות</div>
+
+<div class="menu-item">
+  <span>מבחר סלטים במילוי חודשי (לסועד)</span>
+  <span class="price">₪28</span>
+</div>
+
+<div class="menu-item">
+  <span>חומוס טחינה</span>
+  <span class="price">₪34</span>
+</div>
+
+<div class="menu-item">
+  <span>סלט עגבניות טרי</span>
+  <span class="price">₪32</span>
+</div>
+
+<div class="menu-item">
+  <span>סלט ירקות ישראלי</span>
+  <span class="price">₪32</span>
+</div>
+
+<div class="menu-item">
+  <span>חציל בלאדי על גחלים</span>
+  <span class="price">₪26</span>
+</div>
+
+<div class="menu-item">
+  <span>צ'יפס מטפוח אדמה אמיתי</span>
+  <span class="price">₪28</span>
+</div>
+
+</div>
+
+<!-- צד שמאל -->
+<div>
+
+<div class="section-title">שתייה</div>
+
+<div class="menu-item">
+  <span>שתייה קלה</span>
+  <span class="price">₪14</span>
+</div>
+
+<div class="menu-item">
+  <span>משפחתית</span>
+  <span class="price">₪18</span>
+</div>
+
+<div class="menu-item">
+  <span>בירה שחורה</span>
+  <span class="price">₪16</span>
+</div>
+
+<div class="menu-item">
+  <span>בירה לבנה</span>
+  <span class="price">₪20</span>
+</div>
+
+<div class="section-title">בשרים על האש</div>
+
+<div class="menu-item">
+  <span>שיפוד פרגית</span>
+  <span class="price">₪34</span>
+</div>
+
+<div class="menu-item">
+  <span>שיפוד קבב</span>
+  <span class="price">₪34</span>
+</div>
+
+<div class="menu-item">
+  <span>שיפוד כבד עוף</span>
+  <span class="price">₪34</span>
+</div>
+
+<div class="menu-item">
+  <span>שיפוד לבבות עוף</span>
+  <span class="price">₪28</span>
+</div>
+
+<div class="menu-item">
+  <span>נקניקיות מרגז</span>
+  <span class="price">₪26</span>
+</div>
+
+<div class="menu-item">
+  <span>שיפוד אנטריקוט</span>
+  <span class="price">₪82</span>
+</div>
+
+<div class="menu-item">
+  <span>שיפוד שקדי עגל</span>
+  <span class="price">₪95</span>
+</div>
+
+<div class="section-title">תוספת חמה</div>
+
+<div class="menu-item">
+  <span>אורז לבן</span>
+  <span class="price">₪32</span>
+</div>
+
+<div class="menu-item">
+  <span>אורז ירקות</span>
+  <span class="price">₪32</span>
+</div>
+
+</div>
+
+</div>
+</div>
+</body>
+</html>

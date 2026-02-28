@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>שיפודי מושון - עסקיות</title>
+
+<style>
+:root{
+  --gold:#d4af37;
+  --shadow:0 0 18px rgba(212,175,55,.15);
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  font-family:"Segoe UI",Arial,sans-serif;
+  background: radial-gradient(1000px 700px at 50% -20%, rgba(212,175,55,.08), transparent 60%), #000;
+  color:#fff;
+  padding:20px 14px 40px;
+  text-align:center;
+}
+
+.container{
+  max-width:560px;
+  margin:auto;
+  position:relative;
+}
+
+/* חזור */
+.back{
+  position:absolute;
+  top:0;
+  left:0;
+  border:2px solid var(--gold);
+  background:#1f1f1f;
+  color:#fff;
+  padding:7px 14px;
+  border-radius:10px;
+  font-weight:700;
+  font-size:15px;
+  cursor:pointer;
+}
+
+/* לוגו */
+.logo{
+  display:block;
+  margin:55px auto 35px;
+  width:190px;
+  max-width:75%;
+}
+
+/* כותרת */
+.section-title{
+  display:inline-block;
+  border:2px solid var(--gold);
+  background:linear-gradient(180deg,#262626,#1c1c1c);
+  padding:10px 26px;
+  border-radius:14px;
+  font-size:26px;
+  font-weight:800;
+  box-shadow:var(--shadow);
+  margin-bottom:30px;
+}
+
+/* טקסט תיאור */
+.lines{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  font-size:20px;
+  font-weight:600;
+  line-height:1.4;
+  margin-bottom:20px;
+}
+
+/* מחיר */
+.price{
+  font-size:52px;
+  font-weight:900;
+  margin:20px 0 30px;
+  color:#f5f0df;
+  letter-spacing:1px;
+}
+
+/* תוספת */
+.extra-box{
+  display:inline-block;
+  border:2px solid var(--gold);
+  background:linear-gradient(180deg,#262626,#1c1c1c);
+  padding:10px 22px;
+  border-radius:12px;
+  font-size:20px;
+  font-weight:700;
+  box-shadow:var(--shadow);
+}
+
+/* שורה תחתונה */
+.footer{
+  margin-top:55px;
+  font-size:18px;
+  font-weight:600;
+  color:#e6e6e6;
+}
+
+@media(max-width:420px){
+  .section-title{ font-size:22px; }
+  .lines{ font-size:17px; }
+  .price{ font-size:44px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<button class="back" onclick="history.back()">חזור</button>
+
+<img src="logo.png" class="logo" alt="שיפודי מושון">
+
+<div class="section-title">עסקיות</div>
+
+<div class="lines">
+  <div>שיפוד לבחירה</div>
+  <div>פרגית / קבב / כבד עוף</div>
+  <div>3 תוספות</div>
+  <div>שתיה</div>
+</div>
+
+<div class="price">₪66</div>
+
+<div class="extra-box">תוספת שיפוד 20 ₪</div>
+
+<div class="footer">עסקיות עד השעה 17:00</div>
+
+</div>
+
+</body>
+</html>

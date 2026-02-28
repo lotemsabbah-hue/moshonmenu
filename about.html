@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>שיפודי מושון - מי אנחנו</title>
+
+  <style>
+    :root{
+      --gold:#d4af37;
+      --muted:#cfcfcf;
+      --shadow:0 0 18px rgba(212,175,55,.15);
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+      background: radial-gradient(1000px 700px at 50% -20%, rgba(212,175,55,.08), transparent 60%), #000;
+      color:#fff;
+      padding:20px 14px 50px;
+      text-align:center;
+    }
+
+    .container{
+      max-width:600px;
+      margin:auto;
+      position:relative;
+    }
+
+    /* חזור */
+    .back{
+      position:absolute;
+      top:0;
+      left:0;
+      border:2px solid var(--gold);
+      background:#1f1f1f;
+      color:#fff;
+      padding:6px 12px;
+      border-radius:10px;
+      font-weight:700;
+      font-size:14px;
+      cursor:pointer;
+    }
+    .back:hover{ box-shadow:0 0 12px rgba(212,175,55,.25); }
+
+    /* לוגו */
+    .logo{
+      display:block;
+      margin:45px auto 18px;
+      width:200px;
+      max-width:80%;
+      border-radius:16px;
+      border:1px solid rgba(212,175,55,.35);
+      box-shadow:0 0 18px rgba(212,175,55,.12);
+      background:#0b0b0b;
+    }
+
+    /* כותרת בסגנון index */
+    .title{
+      display:inline-block;
+      border:2px solid var(--gold);
+      background:linear-gradient(180deg,#262626,#1c1c1c);
+      padding:12px 28px;
+      border-radius:16px;
+      font-size:22px;
+      font-weight:900;
+      box-shadow:var(--shadow);
+      margin: 10px 0 18px;
+    }
+
+    /* טקסט */
+    .text{
+      text-align:center;
+      color:#f1f1f1;
+      line-height:1.85;
+      font-size:16.5px;
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 6px 6px 0;
+      white-space: pre-line;
+    }
+
+    .spacer{ height: 14px; }
+
+    .q{
+      margin-top: 16px;
+      font-weight:900;
+      color:#fff;
+      font-size:18px;
+    }
+
+    .highlight{
+      color:#fff;
+      font-weight:800;
+    }
+
+    @media (max-width:420px){
+      .text{ font-size:15.5px; }
+      .title{ font-size:20px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <button class="back" onclick="history.back()">חזור</button>
+
+    <img src="logo.png" class="logo" alt="שיפודי מושון">
+
+    <div class="title">הסיפור שמאחורי הטעם</div>
+
+    <div class="text">
+בשנת 1974, הרבה לפני טרנדים, לפני רשתות ולפני תפריטים מעוצבים – היה אבא שלי.
+אוטובוס ישן, גריל חם, ואהבה גדולה לאוכל ולאנשים.
+שם, על גלגלים, התחיל הסיפור של שיפודי מושון.
+
+מהיום הראשון זה לא היה רק בשר.
+זו הייתה דרך.
+לעבוד קשה, לכבד חומרי גלם, להאכיל אנשים בכוונה טובה ולתת לכל אחד
+שיגיע להרגיש בבית.
+
+עם השנים המקום גדל, השתנה, התקדם – אבל הלב נשאר אותו לב.
+הטעמים הם אותם טעמים, הריחות אותם ריחות, והכבוד למסורת נשאר מעל הכול.
+    </div>
+
+    <div class="q">ומה היום?</div>
+
+    <div class="text">
+<span class="highlight">היום שיפודי מושון הוא דור המשך.</span>
+שילוב של ניסיון של עשרות שנים עם מחשבה חדשה, דיוק, וחיפוש תמידי
+להיות יותר טובים – בלי לשכוח מאיפה באנו.
+
+התפריט החדש נולד בדיוק מהמקום הזה:
+מחווה להתחלה, לאבא, לטעמים הראשונים –
+יחד עם התפתחות, עומק וטעמים שמתאימים להיום.
+
+כל מנה פה מספרת סיפור.
+של זמן, של משפחה, של דרך.
+ואנחנו מזמינים אתכם להיות חלק מאיתנו.
+    </div>
+  </div>
+</body>
+</html>

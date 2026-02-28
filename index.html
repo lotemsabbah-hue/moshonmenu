@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>שיפודי מושון</title>
+
+<style>
+:root{
+  --gold:#d4af37;
+  --shadow:0 0 18px rgba(212,175,55,.15);
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  font-family:"Segoe UI",Arial,sans-serif;
+  background: radial-gradient(1000px 700px at 50% -20%, rgba(212,175,55,.08), transparent 60%), #000;
+  color:#fff;
+  padding:30px 16px 60px;
+  text-align:center;
+}
+
+.container{
+  max-width:500px;
+  margin:auto;
+}
+
+.logo{
+  width:220px;
+  max-width:85%;
+  margin:20px auto 40px;
+  display:block;
+}
+
+.menu-btn{
+  display:block;
+  width:100%;
+  margin:14px 0;
+  padding:16px 20px;
+  font-size:20px;
+  font-weight:900;
+  text-decoration:none;
+  color:#fff;
+  background:linear-gradient(180deg,#262626,#1c1c1c);
+  border:2px solid var(--gold);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  transition:all .2s ease;
+}
+
+.menu-btn:hover{
+  background:#2f2f2f;
+  box-shadow:0 0 20px rgba(212,175,55,.25);
+  transform:scale(1.02);
+}
+
+.menu-btn:active{
+  transform:scale(.98);
+}
+
+@media(max-width:420px){
+  .menu-btn{ font-size:18px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <img src="logo.png" class="logo" alt="שיפודי מושון">
+
+  <a href="menu.html" class="menu-btn">תפריט</a>
+  <a href="about.html" class="menu-btn">אודות</a>
+  <a href="events.html" class="menu-btn">אירועים</a>
+  <a href="gallery.html" class="menu-btn">גלריה</a>
+  <a href="https://wa.me/972548620301" target="_blank" class="menu-btn">
+    הזמנת שולחן
+  </a>
+
+</div>
+
+</body>
+</html>
