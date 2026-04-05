@@ -48,6 +48,7 @@ body{
   margin-bottom:20px;
   box-shadow:var(--shadow);
   position:relative;
+  background:#111;
 }
 
 .slider img{
@@ -58,10 +59,23 @@ body{
   inset:0;
   opacity:0;
   transition:opacity .6s ease;
+  pointer-events:none;
 }
 
 .slider img.active{
   opacity:1;
+}
+
+.slider-placeholder{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+  color:#bbb;
+  font-size:16px;
+  background:#111;
 }
 
 .menu-btn{
@@ -105,33 +119,84 @@ body{
 
   <div class="tagline">כבר מעל 50 שנה אנחנו עושים באהבה</div>
 
-  <div class="slider">
-    <img src="img1.jpg" class="active">
-    <img src="img2.jpg">
-    <img src="img3.jpg">
-    <img src="img4.jpg">
+  <div class="slider" id="slider">
+    <div class="slider-placeholder" id="sliderPlaceholder">טוען תמונות...</div>
+    <img src="img1.jpg" alt="תמונה 1">
+    <img src="img2.jpg" alt="תמונה 2">
+    <img src="img3.jpg" alt="תמונה 3">
+    <img src="img4.jpg" alt="תמונה 4">
   </div>
 
   <a href="menu.html" class="menu-btn">תפריט</a>
   <a href="about.html" class="menu-btn">מי אנחנו</a>
   <a href="events.html" class="menu-btn">אירועים</a>
   <a href="gallery.html" class="menu-btn">גלריה</a>
-<a href="https://wa.me/972548620301" alt="WhatsApp" title="WhatsApp">    הזמנת שולחן
+  <a href="https://wa.me/972548620301" class="menu-btn" target="_blank" rel="noopener noreferrer">
+    הזמנת שולחן בוואטסאפ
   </a>
 
 </div>
 
 <script>
-const slides = document.querySelectorAll('.slider img');
-let currentSlide = 0;
+(function () {
+  const slider = document.getElementById('slider');
+  const placeholder = document.getElementById('sliderPlaceholder');
+  const allImages = Array.from(slider.querySelectorAll('img'));
+  const validImages = [];
+  let loadedCount = 0;
+  let currentSlide = 0;
 
-if (slides.length > 1) {
-  setInterval(() => {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add('active');
-  }, 3000);
-}
+  function finishSetup() {
+    if (validImages.length === 0) {
+      placeholder.textContent = 'לא נמצאו תמונות להצגה';
+      return;
+    }
+
+    placeholder.style.display = 'none';
+    validImages[0].classList.add('active');
+
+    if (validImages.length > 1) {
+      setInterval(() => {
+        validImages[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % validImages.length;
+        validImages[currentSlide].classList.add('active');
+      }, 3000);
+    }
+  }
+
+  function markDone() {
+    loadedCount++;
+    if (loadedCount === allImages.length) {
+      finishSetup();
+    }
+  }
+
+  allImages.forEach((img) => {
+    if (img.complete) {
+      if (img.naturalWidth > 0) {
+        validImages.push(img);
+      } else {
+        img.remove();
+      }
+      markDone();
+      return;
+    }
+
+    img.addEventListener('load', () => {
+      if (img.naturalWidth > 0) {
+        validImages.push(img);
+      } else {
+        img.remove();
+      }
+      markDone();
+    });
+
+    img.addEventListener('error', () => {
+      img.remove();
+      markDone();
+    });
+  });
+})();
 </script>
 
 </body>
